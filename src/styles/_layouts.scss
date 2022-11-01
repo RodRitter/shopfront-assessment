@@ -1,0 +1,29 @@
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.main-header {
+    margin-bottom: 40px;
+}
+
+@mixin flex-all {
+    display: flex;
+
+    > * {
+        flex: 1;
+    }
+}
+
+.flex-all {
+    @include flex-all;
+}
+
+.flex-all-col {
+    @include flex-all;
+    flex-direction: column;
+}
+
+.flex {
+    display: flex;
+}

@@ -5,6 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { store } from "./redux/store";
 import { Provider } from "react-redux";
+import "./styles/main.scss";
 
 const queryClient = new QueryClient();
 

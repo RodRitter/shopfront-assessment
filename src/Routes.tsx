@@ -1,6 +1,6 @@
 import { Route } from "wouter";
-import Products from "./containers/Products";
-import Cart from "./containers/Cart";
+import Products from "./pages/Products";
+import Cart from "./pages/Cart";
 
 function Routes() {
     return (

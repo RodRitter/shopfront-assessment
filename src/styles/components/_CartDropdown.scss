@@ -1,0 +1,29 @@
+@use "../variables/colors";
+
+.cart-dropdown {
+    justify-content: flex-end;
+    align-items: center;
+    color: colors.$dark-gray;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.cart-dropdown-label {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cart-dropdown-total {
+    $size: 24px;
+
+    margin-left: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    width: $size;
+    height: $size;
+    line-height: $size;
+    border-radius: 50%;
+    background: colors.$orange;
+    color: colors.$white;
+    text-align: center;
+}
