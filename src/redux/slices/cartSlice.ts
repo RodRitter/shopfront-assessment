@@ -23,8 +23,10 @@ export const cartSlice = createSlice({
             const match = state.items[productId];
 
             if (match) {
+                // If there's an existing product, increment amount in cart.
                 state.items[productId].amount += 1;
             } else {
+                // No existing product, add it to cart.
                 const _payload: CartProductType = {
                     ...action.payload,
                     amount: 1,
@@ -37,8 +39,10 @@ export const cartSlice = createSlice({
             const match = state.items[productId];
 
             if (match) {
+                // There is more than one, decrement the amount in cart.
                 if (match.amount > 1) match.amount -= 1;
                 else {
+                    // There is only a single product, delete it from cart.
                     delete state.items[productId];
                 }
             }
