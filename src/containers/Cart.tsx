@@ -1,6 +1,6 @@
 import BaseLayout from "../layouts/BaseLayout";
 
-const Cart = () => {
+const Cart: React.FC = () => {
     return <BaseLayout>Cart</BaseLayout>;
 };
 

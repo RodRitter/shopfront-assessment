@@ -2,9 +2,9 @@
 
 ## Stack
 
--   State Management: React Query
+-   State Management: Redux Toolkit
 -   CSS/Styling: SASS
--   Data Fetching: Axios
+-   Data Fetching: React Query / Axios
 -   Routing: wouter
 
 ## Planning Notes
