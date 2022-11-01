@@ -4,10 +4,13 @@ import useCart from "../hooks/useCart";
 
 const Products: React.FC = () => {
     const { status, data, error, isFetching } = useProducts();
-    const { cartProducts, addToCart, removeFromCart } = useCart();
+    const { cartProducts, cartPrice, cartTotal, addToCart, removeFromCart } =
+        useCart();
 
     return (
         <BaseLayout>
+            <div>{cartPrice && `$${cartPrice}`}</div>
+            <div>{cartTotal}</div>
             {data &&
                 data.map((product: any) => (
                     <div key={product.id} onClick={() => addToCart(product)}>
