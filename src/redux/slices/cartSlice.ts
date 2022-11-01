@@ -1,34 +1,47 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
+import { ProductType } from "../../types";
 
-interface CartItemTypes {
-    id: number;
-    title: string;
-    category: string;
-    description: string;
-    image: string;
-    price: number;
-    ratings: object;
+interface CartProductType extends ProductType {
+    amount: number;
 }
 
 export interface CartState {
-    items: CartItemTypes[];
+    items: { [productId: number]: CartProductType };
 }
 
 const initialState: CartState = {
-    items: [],
+    items: {},
 };
 
 export const cartSlice = createSlice({
     name: "cart",
     initialState,
     reducers: {
-        add: (state, action: PayloadAction<CartItemTypes>) => {
-            state.items.push(action.payload);
+        add: (state, action: PayloadAction<ProductType>) => {
+            const productId = action.payload.id;
+            const match = state.items[productId];
+
+            if (match) {
+                state.items[productId].amount += 1;
+            } else {
+                const _payload: CartProductType = {
+                    ...action.payload,
+                    amount: 1,
+                };
+                state.items[productId] = _payload;
+            }
         },
         remove: (state, action: PayloadAction<number>) => {
-            const itemId = action.payload;
-            state.items = state.items.filter((item) => item.id !== itemId);
+            const productId = action.payload;
+            const match = state.items[productId];
+
+            if (match) {
+                if (match.amount > 1) match.amount -= 1;
+                else {
+                    delete state.items[productId];
+                }
+            }
         },
     },
 });
