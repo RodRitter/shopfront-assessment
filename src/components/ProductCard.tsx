@@ -1,8 +1,8 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
 import { ProductType } from "../lib/types";
 import useCart from "../hooks/useCart";
+import Button from "../components/Button";
 
 type ProductCardType = {
     product?: ProductType;
@@ -20,12 +20,19 @@ const ProductCard = ({ product, skeleton }: ProductCardType) => {
                 </div>
                 <h3 title={product.title}>{product.title}</h3>
                 <h4>${product.price}</h4>
-                <button
+                <Button
+                    className="add-to-cart-btn"
+                    onClick={() => addToCart(product)}
+                    icon={faCartShopping}
+                >
+                    Add
+                </Button>
+                {/* <button
                     className="add-to-cart-btn"
                     onClick={() => addToCart(product)}
                 >
                     <FontAwesomeIcon icon={faCartShopping} /> Add
-                </button>
+                </button> */}
             </section>
         );
     }

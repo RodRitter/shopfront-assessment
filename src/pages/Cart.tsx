@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClose, faArrowLeft } from "@fortawesome/free-solid-svg-icons";
 import useCart from "../hooks/useCart";
+import Button from "../components/Button";
 
 const Cart = () => {
     const { cartProducts, cartPrice, cartTotal, removeFromCart } = useCart();
@@ -23,14 +24,13 @@ const Cart = () => {
                         {cartProducts.map((product) => (
                             <tr key={product.id}>
                                 <td>
-                                    <button
+                                    <Button
                                         className="remove-product-btn"
                                         onClick={() =>
                                             removeFromCart(product.id)
                                         }
-                                    >
-                                        <FontAwesomeIcon icon={faClose} />
-                                    </button>
+                                        icon={faClose}
+                                    ></Button>
                                     <span>{product.title}</span>
                                 </td>
                                 <td className="text-center">
