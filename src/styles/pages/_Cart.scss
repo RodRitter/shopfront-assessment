@@ -1,0 +1,64 @@
+@use "../variables/colors";
+
+.cart-table {
+    border: 1px solid colors.$light-gray;
+    border-radius: 15px;
+    margin: 0 auto;
+
+    th {
+        text-align: left;
+        padding: 15px;
+    }
+
+    tr {
+        &:hover {
+            .remove-product-btn {
+                width: 30px;
+            }
+        }
+    }
+
+    td {
+        padding: 15px;
+        font-weight: 600;
+
+        &:first-child {
+            color: colors.$mid-gray;
+            display: flex;
+            align-items: center;
+            width: 330px;
+        }
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .empty-row {
+        text-align: center;
+        font-weight: normal;
+
+        a {
+            margin-left: 10px;
+        }
+    }
+
+    .remove-product-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-size: 18px;
+        width: 0;
+        overflow: hidden;
+        padding: 0;
+        transition: all ease 0.1s;
+
+        &:hover {
+            color: colors.$red;
+        }
+    }
+
+    tfoot td {
+        border-top: 1px solid colors.$light-gray;
+    }
+}

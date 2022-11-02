@@ -8,6 +8,7 @@ const Header = () => {
             <Link href="/">
                 <h1 className="brand">DVT Storefront</h1>
             </Link>
+            <div />
             <CartDropdown />
         </header>
     );
