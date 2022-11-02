@@ -52,6 +52,8 @@ export const cartSlice = createSlice({
                     delete state.items[productId];
                 }
             }
+
+            setStore(CART_STORE, state.items);
         },
     },
 });
