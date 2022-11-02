@@ -2,18 +2,13 @@
 @use "./typography";
 @use "./layouts";
 
+// Pages
+@use "./pages/Products";
+
 // Components
 @use "./components/CartDropdown";
 
 // Global
-body {
-    background: rgb(241, 242, 242);
-    background: radial-gradient(
-        circle,
-        rgba(241, 242, 242, 1) 0%,
-        rgba(235, 233, 230, 1) 100%
-    );
-}
 
 .brand {
     font-size: 20px;
