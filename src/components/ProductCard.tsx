@@ -1,7 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCartShopping } from "@fortawesome/free-solid-svg-icons";
-import { ProductType } from "../types";
+import { ProductType } from "../lib/types";
 import useCart from "../hooks/useCart";
 
 type ProductCardType = {

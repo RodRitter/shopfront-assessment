@@ -1,6 +1,6 @@
 import { RootState } from "../redux/store";
 import { useAppDispatch, useAppSelector } from "../redux/hooks";
-import { ProductType } from "../types";
+import { ProductType } from "../lib/types";
 import { add, remove } from "../redux/slices/cartSlice";
 
 const useCart = () => {

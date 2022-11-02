@@ -1,32 +1,33 @@
 @use "../variables/colors";
+@use "../variables/breakpoints";
 
 .cart-table {
     border: 1px solid colors.$light-gray;
     border-radius: 15px;
     margin: 0 auto;
+    overflow: auto;
+    width: breakpoints.$sm;
+    border-spacing: 0;
 
     th {
         text-align: left;
         padding: 15px;
-    }
-
-    tr {
-        &:hover {
-            .remove-product-btn {
-                width: 30px;
-            }
-        }
+        width: fit-content;
+        white-space: nowrap;
     }
 
     td {
-        padding: 15px;
+        border-top: 1px solid colors.$light-gray;
+    }
+
+    td {
+        padding: 10px 15px;
         font-weight: 600;
 
         &:first-child {
             color: colors.$mid-gray;
             display: flex;
             align-items: center;
-            width: 330px;
         }
     }
 
@@ -48,10 +49,11 @@
         border: none;
         cursor: pointer;
         font-size: 18px;
-        width: 0;
+        flex: 0 0 30px;
         overflow: hidden;
         padding: 0;
         transition: all ease 0.1s;
+        text-align: left;
 
         &:hover {
             color: colors.$red;

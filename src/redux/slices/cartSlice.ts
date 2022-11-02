@@ -1,6 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import type { PayloadAction } from "@reduxjs/toolkit";
-import { ProductType } from "../../types";
+import { ProductType } from "../../lib/types";
+import { getStore, setStore } from "../../lib/storage";
+import { CART_STORE } from "../../lib/constants";
 
 interface CartProductType extends ProductType {
     amount: number;
@@ -10,8 +12,10 @@ export interface CartState {
     items: { [productId: number]: CartProductType };
 }
 
+const cartStore = getStore(CART_STORE);
+
 const initialState: CartState = {
-    items: {},
+    items: cartStore || {},
 };
 
 export const cartSlice = createSlice({
@@ -33,6 +37,8 @@ export const cartSlice = createSlice({
                 };
                 state.items[productId] = _payload;
             }
+
+            setStore(CART_STORE, state.items);
         },
         remove: (state, action: PayloadAction<number>) => {
             const productId = action.payload;

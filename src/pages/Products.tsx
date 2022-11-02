@@ -23,7 +23,7 @@ const Products = () => {
 
                 {data &&
                     data.map((product: any) => (
-                        <ProductCard product={product} />
+                        <ProductCard key={product.id} product={product} />
                     ))}
             </div>
         </BaseLayout>
