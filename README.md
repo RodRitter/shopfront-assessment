@@ -7,9 +7,7 @@
 -   Data Fetching: React Query / Axios
 -   Routing: wouter
 
-## Planning Notes
-
-### Routes
+## Routes
 
 -   products (/)
 -   cart (/cart)
